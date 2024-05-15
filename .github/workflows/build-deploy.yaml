@@ -33,7 +33,7 @@ jobs:
       - name: Get actions
         uses: actions/checkout@v4
       - name: Deploying to Back4app
-        uses: omurilo/action-back4app@v3 #The action
+        uses: back4app/Github-Ci-Cd-Example@v1 #The action
         with:
           project: ${{secrets.NAME_PROJECT}}
           accountKey: ${{secrets.ACCOUNT_KEY}}
