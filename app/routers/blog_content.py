@@ -7,7 +7,7 @@ from datetime import datetime
 from typing import List
 from bson import ObjectId
 
-router = APIRouter (prefix= "/blog", tags= ["Blog content"])
+router = APIRouter (prefix= "/blog", tags= ["Blog content!!!"])
 
 
 @router.post("/", response_description= "Create blog content", response_model= BlogContentResponse)
