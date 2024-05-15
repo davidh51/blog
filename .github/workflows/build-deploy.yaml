@@ -26,9 +26,10 @@ jobs:
   
   Render-deployment:
     runs-on: ubuntu-latest
-    need: [build]
+    needs: [build]
 
     environment: Render_production
+    
     steps:
       - uses: actions/checkout@v3
       - uses: JorgeLNJunior/render-deploy@v1.4.4
