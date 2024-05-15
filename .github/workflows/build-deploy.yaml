@@ -31,11 +31,11 @@ jobs:
     environment: Render_production
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: JorgeLNJunior/render-deploy@v1.4.4
+      - uses: actions/checkout@v4
+      - uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          service_id: ${{secrets.RENDER_SERVICE_ID}}
-          api_key: ${{secrets.RENDER_API_KEY}}
+          service-id: ${{secrets.RENDER_SERVICE_ID}}
+          api-key: ${{secrets.RENDER_API_KEY}}
 
   #Back4app-deployment:
   #  runs-on: ubuntu-latest
