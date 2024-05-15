@@ -9,8 +9,8 @@ on:
 jobs: 
   build:
     runs-on: ubuntu-latest
-      steps:
-        - name: Push repo
-          uses: actions/checkout@v4 #desde github/actions
-        - name: print hello
-          run: echo "Hello world"
+    steps:
+      - name: Push repo
+        uses: actions/checkout@v4 #desde github/actions
+      - name: print hello
+        run: echo "Hello world"
