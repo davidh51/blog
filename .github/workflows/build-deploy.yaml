@@ -29,12 +29,12 @@ jobs:
     needs: [build]
 
     environment: Render_production
-    
+
     steps:
       - uses: actions/checkout@v3
       - uses: JorgeLNJunior/render-deploy@v1.4.4
         with:
-          service_name: ${{secrets.SERVICE_NAME}}
+          service_id: ${{secrets.SERVICE_NAME}}
           api_key: ${{secrets.API_KEY}}
 
   #Back4app-deployment:
