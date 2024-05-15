@@ -41,8 +41,8 @@ jobs:
   Docker-deploy:
     runs-on: ubuntu-latest
 
-    environment: 
-      name: DockerHub_production
+#    environment: 
+#      name: DockerHub_production
 
     steps:
       - name: Login Docker Hub
