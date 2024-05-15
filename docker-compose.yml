@@ -1,0 +1,25 @@
+version: "3.11.2"
+services:
+  api_blog:
+    build: .
+    ports:
+    - 8080:8080
+
+    volumes: #Guardar los cambio en tiempo real
+    - ./:/usr/src/app
+                           #reiniciar el server lyego de los cambios
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload
+           
+    env_file:
+    - ./.env
+    environment:
+    - MONGODB_URL=${MONGODB_URL}
+    - MAIL_USERNAME=${MAIL_USERNAME}
+    - MAIL_PASSWORD=${MAIL_PASSWORD}
+    - MAIL_FROM=${MAIL_FROM}
+    - MAIL_PORT=${MAIL_PORT}
+    - MAIL_SERVER=${MAIL_SERVER}
+    - MAIL_FROM_NAME=${MAIL_FROM_NAME}
+    - SECRET_KEY=${SECRET_KEY}
+    - ALGORITHM=${ALGORITHM}
+    - ACCESS_TOKEN_EXPIRE_MINUTES=${ACCESS_TOKEN_EXPIRE_MINUTES}
