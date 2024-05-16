@@ -32,7 +32,7 @@ jobs:
     steps:
       - name: Get actions
         uses: actions/checkout@v4
-      - name: Deploying to Back4app
+      - name: Deploying to Render
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: ${{secrets.RENDER_SERVICE_ID}}
@@ -67,20 +67,20 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
 
-  #Back4app-deployment:
-  #  runs-on: ubuntu-latest
-  #  needs: [build]
+  Back4app-deployment:
+    runs-on: ubuntu-latest
+    needs: [Docker-deploy]
 
-  #  environment: Back4app_production
+    environment: Back4app_production
 
-  #  steps:
-  #    - name: Get actions
-  #      uses: actions/checkout@v4
-  #    - name: Deploying to Back4app
-  #      uses: back4app/Github-Ci-Cd-Example@v1 #The action
-  #      with:
-  #        project: ${{secrets.NAME_PROJECT}}
-  #        accountKey: ${{secrets.ACCOUNT_KEY}}
+    steps:
+      - name: Get actions
+        uses: actions/checkout@v4
+      - name: Deploying to Back4app
+        uses: back4app/Github-Ci-Cd-Example@v1 #The action
+        with:
+          project: ${{secrets.NAME_PROJECT}}
+          accountKey: ${{secrets.ACCOUNT_KEY}}
 
 
       
