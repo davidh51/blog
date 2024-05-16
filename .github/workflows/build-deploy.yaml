@@ -38,8 +38,6 @@ jobs:
           service-id: ${{secrets.RENDER_SERVICE_ID}}
           api-key: ${{secrets.RENDER_API_KEY}}
 
-
-
   Docker-deploy:
     runs-on: ubuntu-latest
 
@@ -65,7 +63,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/blog2:latest
 
   Back4app-deployment:
     runs-on: ubuntu-latest
